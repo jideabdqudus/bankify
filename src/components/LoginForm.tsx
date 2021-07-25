@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Input, Button, Row, Col, Card } from "antd";
+import { Form, Input, Button, Card } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 
@@ -21,6 +21,7 @@ export const LoginForm = () => {
 
   return (
     <div className="loginForm">
+      <h1>MakersValley</h1>
       <Card className="cardHero">
         <Form
           name="normal_login"
@@ -65,7 +66,7 @@ export const LoginForm = () => {
             />
           </Form.Item>
           <Form.Item>
-            <Button type="primary" htmlType="submit" className="myBtn">
+            <Button type="primary" htmlType="submit" className="myBtn" block>
               Log in
             </Button>
           </Form.Item>

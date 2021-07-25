@@ -11,6 +11,7 @@ export const Login = () => {
           <div className="container">
             <Row className="loginRow">
               <Col span={24} className="loginHeading">
+                 
                 <LoginForm />
               </Col>
             </Row>

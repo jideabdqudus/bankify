@@ -3,7 +3,7 @@ import { Route, BrowserRouter, Switch } from "react-router-dom";
 
 //Imported Files
 import store from "./store";
-import { Login } from "./pages";
+import { Login, Dashboard } from "./pages";
 
 function App() {
   return (
@@ -11,6 +11,7 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={Login} />
+          <Route exact path="/dashboard" component={Dashboard} />
         </Switch>
       </BrowserRouter>
     </Provider>

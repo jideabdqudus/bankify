@@ -114,6 +114,7 @@ body {
 
 .loginForm {
   width: 500px;
+  margin: 0 auto;
   max-width: 100% !important;
   flex: 0 0 100% !important;
 }
@@ -227,5 +228,26 @@ body {
     box-shadow: 0 5px 15px rgba(0, 115, 231, 0.08);
     margin: 0 !important;
     padding: 0 !important;
+  }
+}
+
+
+.layout{
+  min-height: 100vh;
+  background-color: #f4f7fa;
+}
+
+.content{
+  margin: 50px 30px 0px 230px;
+
+  h1{
+    text-align: center;
+    margin: 10px;
+    font-weight: bolder;
+  }
+
+  h5{
+    text-align: center;
+    margin-top: 40px;
   }
 }
