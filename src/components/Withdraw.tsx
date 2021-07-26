@@ -89,7 +89,7 @@ export const Withdraw: React.FC<Props> = ({
           </Button>
         </Form.Item>
       </Form>
-      <h1>Deposits</h1>
+      <h1>Withdrawals</h1>
       <Table columns={columns} dataSource={withdrawals} />
     </div>
   );
