@@ -190,7 +190,7 @@ body {
   }
 }
 
-.myplans{
+.myplans {
   margin-top: 60px;
   padding: 1rem;
 
@@ -243,6 +243,58 @@ body {
 .dashInvestCard {
   max-width: 100% !important;
   flex: 0 0 75% !important;
+
+  .invest-div {
+    text-align: center;
+    margin-bottom: 20px;
+
+    p {
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 60px;
+      margin-bottom: 0px;
+      color: rgb(10, 46, 101);
+    }
+    h1 {
+      font-size: 30px;
+      font-weight: 600;
+      padding-top: 0px;
+      color: rgb(10, 46, 101);
+    }
+
+    .badged {
+      margin: 10px;
+    }
+  }
+
+  .left {
+    h2 {
+      font-size: 22px;
+      font-weight: 600;
+      color: rgb(10, 46, 101);
+    }
+    h5 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #0a2e65;
+      opacity: 0.5;
+      margin: 0;
+      text-align: inherit;
+    }
+    sup {
+      font-size: 0.6rem;
+      font-weight: 500;
+      top: -1em;
+      margin-right: 4px;
+    }
+    sub {
+      bottom: 0.02em;
+      margin-left: 4px;
+      font-weight: 700;
+      opacity: 0.6;
+      font-size: 0.5em;
+    }
+  }
 }
 
 .dashInvestItem {
@@ -278,6 +330,45 @@ body {
 .dashAppetiteScore {
   max-width: 100% !important;
   flex: 0 0 25% !important;
+
+  .card-appetite {
+    margin-bottom: 20px;
+    border-radius: 7px;
+    height: 150px;
+    .ant-card-body {
+      padding: 0px;
+    }
+
+    h1 {
+      color: rgb(10, 46, 101);
+      font-size: 50px;
+      padding: 0 !important;
+      margin: 0;
+    }
+
+    span {
+      font-size: 20px;
+    }
+  }
+
+  .risk-appetite {
+    border-radius: 7px;
+    height: 180px;
+    .ant-card-body {
+      padding: 20px;
+    }
+
+    span {
+      margin: 10px;
+      font-size: 15px;
+      color: gray;
+      font-weight: 600;
+    }
+    img {
+      height: 56px;
+      width: 56px;
+    }
+  }
 }
 
 @media screen and (max-width: 600px) {

@@ -127,170 +127,38 @@ export const Dash = () => {
             >
               <Row>
                 <Col span={12} className="dashInvestItem">
-                  <div style={{ textAlign: "center", marginBottom: "20px" }}>
-                    <p
-                      style={{
-                        fontSize: "14px",
-                        fontWeight: 600,
-                        marginTop: "60px",
-                        marginBottom: "0px",
-                        color: "rgb(10, 46, 101)",
-                      }}
-                    >
-                      Net worth
-                    </p>
-                    <h1
-                      style={{
-                        fontSize: "30px",
-                        fontWeight: 600,
-                        paddingTop: "0px",
-                        color: "rgb(10, 46, 101)",
-                      }}
-                    >
-                      ₦646,000.00
-                    </h1>
-
-                    <Badge
-                      color="blue"
-                      text="Savings"
-                      style={{ margin: "10px" }}
-                    />
-                    <Badge
-                      color="cyan"
-                      text="Investments"
-                      style={{ margin: "10px" }}
-                    />
-                    <Badge
-                      color="grey"
-                      text="Stash"
-                      style={{ margin: "10px" }}
-                    />
+                  <div className="invest-div">
+                    <p>Net worth</p>
+                    <h1>₦646,000.00</h1>
+                    <Badge color="blue" text="Savings" className="badged" />
+                    <Badge color="cyan" text="Investments" className="badged" />
+                    <Badge color="grey" text="Stash" className="badged" />
                   </div>
                 </Col>
-                <Col span={12}>
+                <Col span={12} className="left">
                   <Col span={24}>
-                    <h2
-                      style={{
-                        fontSize: "22px",
-                        fontWeight: 600,
-                        color: "rgb(10, 46, 101)",
-                      }}
-                    >
+                    <h2>
                       Savings
-                      <p
-                        style={{
-                          fontSize: "1.5rem",
-                          fontWeight: 600,
-                          color: "#0a2e65",
-                          opacity: ".5",
-                        }}
-                      >
-                        <sup
-                          style={{
-                            fontSize: ".6rem",
-                            fontWeight: 500,
-                            top: "-1em",
-                            marginRight: "4px",
-                          }}
-                        >
-                          ₦
-                        </sup>
+                      <h5>
+                        <sup>₦</sup>
                         549,000
-                        <sub
-                          style={{
-                            bottom: ".02em",
-                            marginLeft: "4px",
-                            fontWeight: 700,
-                            opacity: ".6",
-                            fontSize: ".5em",
-                          }}
-                        >
-                          .40
-                        </sub>
-                      </p>
+                        <sub>.40</sub>
+                      </h5>
                     </h2>
                   </Col>
-                  <Col
-                    span={24}
-                    style={{
-                      fontSize: "22px",
-                      fontWeight: 600,
-                      color: "rgb(10, 46, 101)",
-                    }}
-                  >
-                    Investments
-                    <p
-                      style={{
-                        fontSize: "1.5rem",
-                        fontWeight: 600,
-                        color: "#0a2e65",
-                        opacity: ".5",
-                      }}
-                    >
-                      <sup
-                        style={{
-                          fontSize: ".6rem",
-                          fontWeight: 500,
-                          top: "-1em",
-                          marginRight: "4px",
-                        }}
-                      >
-                        ₦
-                      </sup>
+                  <Col span={24}>
+                    <h2>Investments</h2>
+                    <h5>
+                      <sup>₦</sup>
                       120,000
-                      <sub
-                        style={{
-                          bottom: ".02em",
-                          marginLeft: "4px",
-                          fontWeight: 700,
-                          opacity: ".6",
-                          fontSize: ".5em",
-                        }}
-                      >
-                        .00
-                      </sub>
-                    </p>
+                      <sub>.00</sub>
+                    </h5>
                   </Col>
-                  <Col
-                    span={24}
-                    style={{
-                      fontSize: "22px",
-                      fontWeight: 600,
-                      color: "rgb(10, 46, 101)",
-                    }}
-                  >
-                    Stash
-                    <p
-                      style={{
-                        fontSize: "1.5rem",
-                        fontWeight: 600,
-                        color: "#0a2e65",
-                        opacity: ".5",
-                      }}
-                    >
-                      <sup
-                        style={{
-                          fontSize: ".6rem",
-                          fontWeight: 500,
-                          top: "-1em",
-                          marginRight: "4px",
-                        }}
-                      >
-                        ₦
-                      </sup>
-                      0
-                      <sub
-                        style={{
-                          bottom: ".02em",
-                          marginLeft: "4px",
-                          fontWeight: 700,
-                          opacity: ".6",
-                          fontSize: ".5em",
-                        }}
-                      >
-                        .00
-                      </sub>
-                    </p>
+                  <Col span={24}>
+                    <h2>Stash</h2>
+                    <h5>
+                      <sup>₦</sup>0<sub>.00</sub>
+                    </h5>
                   </Col>
                 </Col>
               </Row>
@@ -299,33 +167,16 @@ export const Dash = () => {
           <Col span={6} className="dashAppetiteScore">
             <Row>
               <Col span={24}>
-                <Card
-                  title="SAVING SCORE"
-                  style={{ marginBottom: "20px", borderRadius: "7px" }}
-                >
-                  <h1 style={{ color: "rgb(10, 46,101)", fontSize: "50px" }}>
-                    70<span style={{ fontSize: "20px" }}>/100</span>
+                <Card title="SAVING SCORE" className="card-appetite">
+                  <h1>
+                    70<span>/100</span>
                   </h1>
                 </Card>
               </Col>
               <Col span={24}>
-                <Card title="RISK APPETITE" style={{ borderRadius: "7px" }}>
-                  <img
-                    src={Fire}
-                    alt="Burning Appetite"
-                    height="56px"
-                    width="56px"
-                  />
-                  <span
-                    style={{
-                      margin: "10px",
-                      fontSize: "20px",
-                      color: "gray",
-                      fontWeight: 600,
-                    }}
-                  >
-                    You're Balanced
-                  </span>
+                <Card title="RISK APPETITE" className="risk-appetite">
+                  <img src={Fire} alt="Burning Appetite" />
+                  <span>You're Balanced</span>
                 </Card>
               </Col>
             </Row>
