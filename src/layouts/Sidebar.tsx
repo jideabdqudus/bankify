@@ -1,16 +1,7 @@
 import React from "react";
 import { Layout, Menu } from "antd";
-import {
-  DatabaseOutlined,
-  BookOutlined,
-  CreditCardOutlined,
-  SmileOutlined,
-  TeamOutlined,
-  WalletOutlined,
-  BankOutlined,
-} from "@ant-design/icons";
+import { BookOutlined, BankOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
-
 
 const { Sider } = Layout;
 class Sidebar extends React.Component {
@@ -23,19 +14,16 @@ class Sidebar extends React.Component {
 
   render() {
     return (
-      <Sider
-        style={{
-          backgroundColor: "#f4f7fa",
-          border: "none",
-          position: "fixed",
-          zIndex: 999,
-        }}
-      >
-        <div className="logo" style={{marginTop:"140px"}} />
+      <Sider className="sider">
+        <div className="logo" style={{ marginTop: "140px" }} />
         <Menu
           defaultSelectedKeys={["1"]}
           mode="inline"
-          style={{ backgroundColor: "#f4f7fa", paddingBottom:"100%", marginBottom:"100%" }}
+          style={{
+            backgroundColor: "#f4f7fa",
+            paddingBottom: "100%",
+            marginBottom: "100%",
+          }}
         >
           <Menu.Item
             // to="/"
@@ -74,7 +62,7 @@ class Sidebar extends React.Component {
               marginBottom: "20px",
             }}
           >
-              Plans
+            Plans
           </Menu.Item>
         </Menu>
       </Sider>

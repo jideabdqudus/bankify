@@ -1,5 +1,6 @@
-import React, { Fragment } from "react";
-import { Card, Row, Col, Button, Badge } from "antd";
+import { Fragment } from "react";
+import { Card, Row, Col, Button, Badge, Drawer } from "antd";
+
 
 import Plan from "../assets/emergency-plan-2.6855725.svg";
 import Savings from "../assets/saving-plans.8ae6bb5.svg";
@@ -7,8 +8,18 @@ import Chart from "../assets/naira_funds_blue.77b50e2.svg";
 import Drop from "../assets/plan.bffb472.svg";
 import Box from "../assets/giftbox-white.90fb8b4.svg";
 import Fire from "../assets/fire.svg";
+import { IApp } from "../type.d";
+import {Deposit} from "../components"
+interface Props {
+  state: IApp;
+  showDrawer: () => void;
+  onClose: () => void;
+  visibility: Boolean | boolean;
+  setVisibility?: Boolean;
+}
 
-export const Dash = () => {
+export const Dash: React.FC<Props> = ({ state, showDrawer, onClose, visibility }) => {
+  const { balance, monetary } = state.appReducer;
   return (
     <div>
       <Fragment>
@@ -22,9 +33,11 @@ export const Dash = () => {
             <Row>
               <Col span={24}>
                 <h2>
-                  <sup>₦</sup>
-                  320,000
-                  <sub>.40</sub>
+                  <sup>$</sup>
+                  {`${balance}`
+                    .toString()
+                    .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
+                  <sub>.00</sub>
                 </h2>
               </Col>
             </Row>
@@ -34,7 +47,33 @@ export const Dash = () => {
             className="dashBalance"
             style={{ marginBottom: "10px" }}
           >
-            <Button className="myBtn">ADD MONEY</Button>
+            <Button className="myBtn" onClick={showDrawer}>
+              Deposit
+            </Button>
+
+            <Drawer
+              title="Create a new account"
+              width={720}
+              onClose={onClose}
+              visible={visibility}
+              bodyStyle={{ paddingBottom: 80 }}
+              footer={
+                <div
+                  style={{
+                    textAlign: "right",
+                  }}
+                >
+                  <Button onClick={onClose} style={{ marginRight: 8 }}>
+                    Cancel
+                  </Button>
+                  <Button onClick={onClose} type="primary">
+                    Submit
+                  </Button>
+                </div>
+              }
+            >
+              <Deposit/>
+            </Drawer>
           </Col>
           <Col span={16} className="dashGrowth">
             <Row>
@@ -109,8 +148,10 @@ export const Dash = () => {
                   New House Purchase
                 </p>
                 <h2>
-                  <sup>₦</sup>
-                  247,900
+                  <sup>$</sup>
+                  {`${monetary?.maturity}`
+                    .toString()
+                    .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
                   <sub>.00</sub>
                 </h2>
                 <hr />
@@ -129,7 +170,12 @@ export const Dash = () => {
                 <Col span={12} className="dashInvestItem">
                   <div className="invest-div">
                     <p>Net worth</p>
-                    <h1>₦646,000.00</h1>
+                    <h1>
+                      ${" "}
+                      {`${monetary?.worth}`
+                        .toString()
+                        .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
+                    </h1>
                     <Badge color="blue" text="Savings" className="badged" />
                     <Badge color="cyan" text="Investments" className="badged" />
                     <Badge color="grey" text="Stash" className="badged" />
@@ -139,26 +185,34 @@ export const Dash = () => {
                   <Col span={24}>
                     <h2>
                       Savings
-                      <h5>
-                        <sup>₦</sup>
-                        549,000
+                      <span>
+                        <sup>$</sup>
+                        {`${monetary?.savings}`
+                          .toString()
+                          .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
                         <sub>.40</sub>
-                      </h5>
+                      </span>
                     </h2>
                   </Col>
                   <Col span={24}>
                     <h2>Investments</h2>
-                    <h5>
-                      <sup>₦</sup>
-                      120,000
+                    <span>
+                      <sup>$</sup>
+                      {`${monetary?.investment}`
+                        .toString()
+                        .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
                       <sub>.00</sub>
-                    </h5>
+                    </span>
                   </Col>
                   <Col span={24}>
                     <h2>Stash</h2>
-                    <h5>
-                      <sup>₦</sup>0<sub>.00</sub>
-                    </h5>
+                    <span>
+                      <sup>$</sup>{" "}
+                      {`${monetary?.stash}`
+                        .toString()
+                        .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
+                      <sub>.00</sub>
+                    </span>
                   </Col>
                 </Col>
               </Row>

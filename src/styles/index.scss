@@ -273,12 +273,13 @@ body {
       font-weight: 600;
       color: rgb(10, 46, 101);
     }
-    h5 {
+    span {
       font-size: 1.5rem;
       font-weight: 600;
       color: #0a2e65;
       opacity: 0.5;
       margin: 0;
+      display: block;
       text-align: inherit;
     }
     sup {
@@ -447,4 +448,11 @@ body {
   font-weight: 500;
   color: rgba(10, 46, 101, 0.5);
   font-size: 0.95rem;
+}
+
+.sider {
+  background-color: #f4f7fa;
+  border: none;
+  position: fixed;
+  z-index: 999;
 }
