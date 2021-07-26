@@ -20,12 +20,24 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Note: This would run this project on port 3000 or any available port.
 
-# On viewing the app on your localhost, you get shown a dashboard
+# What next
+
+On viewing the app on your localhost, you get shown a dashboard
 
 <img src="./screenshot.png" alt="Screenshot"/>
 
-# You can Deposit and Withdraw Money from an account by clicking the buttons.
+# Deposit and Withdrawal
+
+You can Deposit and Withdraw Money from an account by clicking the buttons.
 
 <img src="./screenshot2.png" alt="Screenshot"/>
 
+# Additons 
+
+- You can monitor your account balance as you make a deposit and withdrawal
+- If you try to withdraw more than your account balance you get an error 
+- You can see a list of your withdrawals and deposits. 
+
 The UI for this project was inspired by a [dribble design](https://dribbble.com/tags/cowrywise) 
+
+©Jideabdquds, The Qoder
