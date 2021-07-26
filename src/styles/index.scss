@@ -161,6 +161,66 @@ body {
     opacity: 0.6;
   }
 }
+.saveInvest {
+  margin-top: 60px;
+  padding: 1rem;
+  p {
+    font-size: 15px;
+    font-weight: 500;
+    color: #0e397c;
+    margin-top: 20px;
+  }
+
+  a {
+    color: #0e397c;
+  }
+
+  img {
+    height: 56px;
+    width: 56px;
+  }
+
+  .card-cta {
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 0 5px 15px rgba(0, 115, 231, 0.08);
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 160px;
+  }
+}
+
+.myplans{
+  margin-top: 60px;
+  padding: 1rem;
+
+  h2 {
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: #0a2e65;
+  }
+  sup {
+    font-size: 1.45rem;
+    font-weight: 500;
+    top: -1em;
+    margin-right: 4px;
+  }
+  sub {
+    bottom: 0.02em;
+    margin-left: 4px;
+    font-weight: 700;
+    opacity: 0.6;
+    font-size: 0.5em;
+  }
+
+  .card-plan {
+    background: #e1f6ff !important;
+    border-radius: 7px;
+    box-shadow: 0 5px 15px rgba(0, 115, 231, 0.08);
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
 
 .subhead {
   color: rgb(10, 46, 101);

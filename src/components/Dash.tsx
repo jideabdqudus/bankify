@@ -51,78 +51,36 @@ export const Dash = () => {
           </Col>
         </Row>
 
-        <div style={{ marginTop: "60px", padding: "1rem" }}>
-          <h1 className="subhead">Save & Invest</h1>
+        <div className="saveInvest">
+          <h3 className="subhead">Save & Invest</h3>
           <Row gutter={[24, 24]}>
             <Col span={6} className="dashSavingsCard">
-              <Card className="cardHero">
-                <img
-                  src={Plan}
-                  alt="Emergency Plan"
-                  height="56px"
-                  width="56px"
-                />
-                <p
-                  style={{
-                    fontSize: "15px",
-                    fontWeight: 500,
-                    color: "#0e397c",
-                    marginTop: "20px",
-                  }}
-                >
-                  <a style={{ color: "#0e397c" }} href="#!">
-                    Build Emergency Funds
-                  </a>
+              <Card className="card-cta">
+                <img src={Plan} alt="Emergency Plan" />
+                <p>
+                  <a href="#!">Build Emergency Funds</a>
                 </p>
               </Card>
             </Col>
             <Col span={6} className="dashSavingsCard">
-              <Card className="cardHero">
-                <img
-                  src={Savings}
-                  alt="Savings Plan"
-                  height="56px"
-                  width="56px"
-                />
-                <p
-                  style={{
-                    fontSize: "15px",
-                    fontWeight: 500,
-                    color: "#0e397c",
-                    marginTop: "20px",
-                  }}
-                >
-                  <a style={{ color: "#0e397c" }} href="#!">
-                    My Savings Plan
-                  </a>
+              <Card className="card-cta">
+                <img src={Savings} alt="Savings Plan" />
+                <p>
+                  <a href="#!">My Savings Plan</a>
                 </p>
               </Card>
             </Col>
             <Col span={6} className="dashSavingsCard">
-              <Card className="cardHero">
-                <img
-                  src={Chart}
-                  alt="Savings Plan"
-                  height="56px"
-                  width="56px"
-                />
-                <p
-                  style={{
-                    fontSize: "15px",
-                    fontWeight: 500,
-                    color: "#0e397c",
-                    marginTop: "20px",
-                  }}
-                >
-                  <a style={{ color: "#0e397c" }} href="#!">
-                    Invest in mutual funds
-                  </a>
+              <Card className="card-cta">
+                <img src={Chart} alt="Savings Plan" />
+                <p>
+                  <a href="#!">Invest in mutual funds</a>
                 </p>
               </Card>
             </Col>
             <Col span={6} className="dashSavingsCard">
               <Card
-                className="cardHero"
+                className="card-cta"
                 style={{
                   backgroundImage: `url(${Drop})`,
                   boxShadow: "0 10px 14px 0 rgba(0,102,245,.37)",
@@ -130,14 +88,7 @@ export const Dash = () => {
                 }}
               >
                 <img src={Box} alt="Savings Plan" height="56px" width="56px" />
-                <p
-                  style={{
-                    fontSize: "15px",
-                    fontWeight: 500,
-                    color: "#fff",
-                    marginTop: "20px",
-                  }}
-                >
+                <p>
                   <a style={{ color: "#fff" }} href="#!">
                     REFERRAL GIFTS
                   </a>
@@ -148,56 +99,19 @@ export const Dash = () => {
         </div>
       </Fragment>
 
-      <Fragment>
-        <h1
-          style={{
-            color: "rgba(10,46,101)",
-            opacity: ".3",
-            fontSize: "40px",
-            fontWeight: 600,
-          }}
-        >
-          My Plans
-        </h1>
+      <div className="myplans">
+        <h3 className="subhead">My Plans</h3>
         <Row>
           <Col span={9} className="dashMaturityCard">
             <Badge.Ribbon text="REGULAR PLAN MATURITY">
-              <Card
-                className="cardHero"
-                style={{ backgroundColor: "#e1f6ff", margin: 0 }}
-              >
+              <Card className="card-plan">
                 <p style={{ fontSize: "15px", fontWeight: 500 }}>
                   New House Purchase
                 </p>
-                <h2
-                  style={{
-                    fontSize: "2.4rem",
-                    fontWeight: 600,
-                    color: "#0a2e65",
-                  }}
-                >
-                  <sup
-                    style={{
-                      fontSize: "1.2rem",
-                      fontWeight: 500,
-                      top: "-1em",
-                      marginRight: "4px",
-                    }}
-                  >
-                    ₦
-                  </sup>
+                <h2>
+                  <sup>₦</sup>
                   247,900
-                  <sub
-                    style={{
-                      bottom: ".02em",
-                      marginLeft: "4px",
-                      fontWeight: 700,
-                      opacity: ".6",
-                      fontSize: ".3em",
-                    }}
-                  >
-                    .00
-                  </sub>
+                  <sub>.00</sub>
                 </h2>
                 <hr />
               </Card>
@@ -417,7 +331,7 @@ export const Dash = () => {
             </Row>
           </Col>
         </Row>
-      </Fragment>
+      </div>
     </div>
   );
 };
