@@ -62,7 +62,7 @@ class Sidebar extends React.Component {
               marginBottom: "20px",
             }}
           >
-            Plans
+            Profile
           </Menu.Item>
         </Menu>
       </Sider>

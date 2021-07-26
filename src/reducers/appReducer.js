@@ -1,5 +1,4 @@
-import {DEPOSIT} from "../constants/types"
-
+import { CLEAR_ERROR, DEPOSIT, ERROR, WITHDRAW } from "../constants/types";
 const initialState = {
   monetary: {
     maturity: 120030,
@@ -29,20 +28,52 @@ const initialState = {
       desc: "Pay For Electricity",
     },
   ],
-  withdrawals:[],
+  withdrawals: [
+    {
+      id: "3",
+      owner: "jideabdqudus",
+      amount: 60,
+      desc: "Pay For Electricity",
+    },
+  ],
   alert: "",
 };
-
 const appReducer = (state = initialState, action) => {
   switch (action.type) {
     case DEPOSIT:
-      return{
+      return {
         ...state,
-        deposits:[...state, action.payload]
-      }
+        deposits: [...state.deposits, action.payload],
+        balance: state.balance + Number(action.payload.amount),
+        monetary: {
+          ...state.monetary,
+          worth: state.monetary.worth + Number(action.payload.amount),
+          savings: state.monetary.savings + Number(action.payload.amount),
+        },
+      };
+    case WITHDRAW:
+      return {
+        ...state,
+        withdrawals: [...state.withdrawals, action.payload],
+        balance: state.balance - Number(action.payload.amount),
+        monetary: {
+          ...state.monetary,
+          worth: state.monetary.worth - Number(action.payload.amount),
+          savings: state.monetary.savings - Number(action.payload.amount),
+        },
+      };
+    case ERROR:
+      return {
+        ...state,
+        alert: "An error was encountered",
+      };
+    case CLEAR_ERROR:
+      return {
+        ...state,
+        alert: "",
+      };
     default:
       return state;
   }
 };
-
 export default appReducer;

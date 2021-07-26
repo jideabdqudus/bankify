@@ -14,6 +14,13 @@ export interface IDepositData {
   desc: string;
 }
 
+export interface IWithdrawData {
+  id?: string | number;
+  owner: string;
+  amount: number;
+  desc: string;
+}
+
 export interface IReducer {
   monetary?: IMonetary;
   balance: number;

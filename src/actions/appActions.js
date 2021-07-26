@@ -1,4 +1,9 @@
-import { DEPOSIT, ERROR, LOADING } from "../constants/types";
+import {
+  DEPOSIT,
+  ERROR,
+  LOADING,
+  WITHDRAW,
+} from "../constants/types";
 
 export const deposit = (payload) => (dispatch) => {
   dispatch({ type: LOADING });
@@ -12,6 +17,24 @@ export const deposit = (payload) => (dispatch) => {
       type: ERROR,
       payload: err,
     });
-    console.error(err);
   }
+};
+
+export const withdraw = (payload) => (dispatch) => {
+  dispatch({ type: LOADING });
+  try {
+    dispatch({
+      type: WITHDRAW,
+      payload,
+    });
+  } catch (err) {
+    dispatch({
+      type: ERROR,
+      payload: err,
+    });
+  }
+};
+
+export const error = () => (dispatch) => {
+  dispatch({ type: ERROR });
 };

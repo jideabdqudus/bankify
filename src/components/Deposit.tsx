@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Col, Row, Input, Select, Table, Tag, Button } from "antd";
+import { Form, Col, Row, Input, Table, Tag, Button } from "antd";
 import { IDepositData } from "../type.d";
 
 interface Props {
@@ -15,8 +15,6 @@ export const Deposit: React.FC<Props> = ({
   onChange,
   onFinish,
 }) => {
-  const { Option } = Select;
-
   const columns = [
     {
       title: "Depositor",

@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { Card, Row, Col, Button, Badge, Drawer } from "antd";
+import { Card, Row, Col, Button, Badge, Drawer, Alert } from "antd";
 
 import Plan from "../assets/emergency-plan-2.6855725.svg";
 import Savings from "../assets/saving-plans.8ae6bb5.svg";
@@ -7,16 +7,22 @@ import Chart from "../assets/naira_funds_blue.77b50e2.svg";
 import Drop from "../assets/plan.bffb472.svg";
 import Box from "../assets/giftbox-white.90fb8b4.svg";
 import Fire from "../assets/fire.svg";
-import { IApp } from "../type.d";
-import { Deposit } from "../components";
+import { IApp, IDepositData, IWithdrawData } from "../type.d";
+import { Deposit, Withdraw } from "../components";
 interface Props {
   state: IApp;
   showDrawer: () => void;
   onClose: () => void;
-  onChange: () => void;
+  onChange: any;
   onFinish: () => void;
-  depositData: object;
+  showDrawerToo: () => void;
+  onCloseToo: () => void;
+  onChangeToo: any;
+  onFinishToo: () => void;
+  depositData: IDepositData;
+  withdrawData: IWithdrawData;
   visibility: boolean;
+  visibilityToo: boolean;
   setVisibility?: boolean;
 }
 
@@ -28,8 +34,14 @@ export const Dash: React.FC<Props> = ({
   onChange,
   onFinish,
   depositData,
+  showDrawerToo,
+  onCloseToo,
+  onChangeToo,
+  onFinishToo,
+  visibilityToo,
+  withdrawData,
 }) => {
-  const { balance, monetary, deposits } = state.appReducer;
+  const { balance, monetary, deposits, withdrawals, alert } = state.appReducer;
   return (
     <div>
       <Fragment>
@@ -60,6 +72,14 @@ export const Dash: React.FC<Props> = ({
             <Button className="myBtn" onClick={showDrawer}>
               Deposit
             </Button>
+            <br />
+            <Button
+              className="myBtn"
+              style={{ backgroundColor: "red" }}
+              onClick={showDrawerToo}
+            >
+              Withdraw
+            </Button>
 
             <Drawer
               title="Make a Deposit"
@@ -73,6 +93,24 @@ export const Dash: React.FC<Props> = ({
                 depositData={depositData}
                 onChange={onChange}
                 onFinish={onFinish}
+              />
+            </Drawer>
+
+            <Drawer
+              title="Make a Withdrawal"
+              width={720}
+              onClose={onCloseToo}
+              visible={visibilityToo}
+              bodyStyle={{ paddingBottom: 80 }}
+            >
+              {alert && (
+                <Alert message={alert} type="error" showIcon closable />
+              )}
+              <Withdraw
+                withdrawals={withdrawals}
+                withdrawData={withdrawData}
+                onChangeToo={onChangeToo}
+                onFinishToo={onFinishToo}
               />
             </Drawer>
           </Col>
