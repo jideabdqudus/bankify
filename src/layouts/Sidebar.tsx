@@ -1,6 +1,6 @@
 import React from "react";
 import { Layout, Menu } from "antd";
-import { BookOutlined, BankOutlined } from "@ant-design/icons";
+import {BankOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 
 const { Sider } = Layout;
@@ -44,25 +44,6 @@ class Sidebar extends React.Component {
             }}
           >
             <Link to="/dashboard">Home</Link>
-          </Menu.Item>
-          <Menu.Item
-            key="2"
-            icon={
-              <BookOutlined
-                style={{
-                  fontSize: "20px",
-                  color: "#0a2e65",
-                  marginRight: "40px",
-                }}
-              />
-            }
-            style={{
-              fontSize: "20px",
-              fontWeight: "bold",
-              marginBottom: "20px",
-            }}
-          >
-            Profile
           </Menu.Item>
         </Menu>
       </Sider>

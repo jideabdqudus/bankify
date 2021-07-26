@@ -25,9 +25,105 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+
+    <style>
+      @media (max-width: 768px) {
+        #root {
+          display: none;
+        }
+        #mobile {
+          display: flex !important;
+          flex-direction: column;
+        }
+      }
+      @keyframes rotateAnimation {
+        0% {
+          transform: rotate(0) scale(1);
+        }
+        50% {
+          transform: rotate(120deg) scale(0);
+        }
+        70% {
+          transform: rotate(-120deg) scale(0);
+        }
+        100% {
+          transform: rotate(0) scale(1);
+        }
+      }
+
+      #mobile {
+        height: 100vh;
+        width: 100vw;
+        align-items: center;
+        justify-content: center;
+        display: none;
+        background-color: #fed304;
+      }
+
+      #triangle svg {
+        animation: rotateAnimation 3s ease-in-out infinite;
+      }
+      #square svg {
+        animation: rotateAnimation 3s 1s ease-in-out infinite;
+      }
+      #circle svg {
+        animation: rotateAnimation 3s 0.5s ease-in-out infinite;
+      }
+      #cross svg {
+        animation: rotateAnimation 3s 2s ease-in-out infinite;
+      }
+
+      #loader {
+        height: 100%;
+        width: 100vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #fed304;
+        z-index: 10;
+        transition: opacity 0.3s;
+      }
+      #loader > .screen {
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      #wrapper {
+        width: calc(48px * 2);
+      }
+      #wrapper div {
+        width: 48px;
+        height: 48px;
+        float: left;
+        text-align: center;
+        line-height: 4.5;
+      }
+      #wrapper div svg {
+        width: 70%;
+      }
+      .loader-text {
+        color: white;
+        font-family: sans-serif;
+        letter-spacing: 1px;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="mobile">
+      <p class="loader-text" style="margin-bottom: 0px">Oops!!</p>
+      <p class="loader-text" style="margin-top: 5px">
+        <b>Mobile version under construction 👷‍♀️ 🏗 🚧...</b>
+        <b>View on desktop</b>
+      </p>
+    </div>
     <div id="root"></div>
     <!--
       This HTML file is a template.
