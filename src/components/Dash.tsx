@@ -9,55 +9,22 @@ import Box from "../assets/giftbox-white.90fb8b4.svg";
 import Fire from "../assets/fire.svg";
 
 export const Dash = () => {
-  
   return (
     <div>
       <Fragment>
         <Row>
           <Col span={4} className="dashBalance">
             <Row>
-              <Col
-                span={24}
-                style={{
-                  fontSize: ".95rem",
-                  fontWeight: 500,
-                  color: "rgba(10,46,101,.5)",
-                }}
-              >
+              <Col span={24} className="balance">
                 Total Balance
               </Col>
             </Row>
             <Row>
               <Col span={24}>
-                <h2
-                  style={{
-                    fontSize: "2.8rem",
-                    fontWeight: 600,
-                    color: "#0a2e65",
-                  }}
-                >
-                  <sup
-                    style={{
-                      fontSize: "1.45rem",
-                      fontWeight: 500,
-                      top: "-1em",
-                      marginRight: "4px",
-                    }}
-                  >
-                    ₦
-                  </sup>
+                <h2>
+                  <sup>₦</sup>
                   320,000
-                  <sub
-                    style={{
-                      bottom: ".02em",
-                      marginLeft: "4px",
-                      fontWeight: 700,
-                      opacity: ".6",
-                      fontSize: ".5em",
-                    }}
-                  >
-                    .40
-                  </sub>
+                  <sub>.40</sub>
                 </h2>
               </Col>
             </Row>
@@ -71,54 +38,21 @@ export const Dash = () => {
           </Col>
           <Col span={16} className="dashGrowth">
             <Row>
-              <Col
-                span={24}
-                style={{
-                  fontSize: ".95rem",
-                  fontWeight: 500,
-                  color: "rgba(10,46,101,.5)",
-                }}
-              >
+              <Col span={24} className="balance">
                 Portfolio Growth
               </Col>
               <Col span={24}>
-                <hr
-                  style={{
-                    width: "500px",
-                    margin: 0,
-                    padding: 0,
-                    color: "skyblue",
-                    marginTop: "30px",
-                  }}
-                />
+                <hr />
               </Col>
               <Col span={24}>
-                <h3
-                  style={{
-                    marginTop: "20px",
-                    color: "rgba(10,46,101)",
-                    opacity: ".6",
-                  }}
-                >
-                  Keep going you've started making money moves
-                </h3>
+                <h3>Keep going you've started making money moves</h3>
               </Col>
             </Row>
           </Col>
         </Row>
 
         <div style={{ marginTop: "60px", padding: "1rem" }}>
-          <h1
-            style={{
-              color: "rgba(10,46,101)",
-              opacity: ".3",
-              fontSize: "40px",
-              fontWeight: 600,
-              lineHeight: "1.1em",
-            }}
-          >
-            Save & Invest
-          </h1>
+          <h1 className="subhead">Save & Invest</h1>
           <Row gutter={[24, 24]}>
             <Col span={6} className="dashSavingsCard">
               <Card className="cardHero">
@@ -487,4 +421,3 @@ export const Dash = () => {
     </div>
   );
 };
-

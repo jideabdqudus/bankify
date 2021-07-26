@@ -54,7 +54,6 @@ body {
   }
 }
 
-
 .cardHero {
   background: #fff;
   border-radius: 7px;
@@ -122,15 +121,57 @@ body {
 .dashBalance {
   max-width: 100% !important;
   flex: 0 0 20% !important;
+
+  h2 {
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: #0a2e65;
+  }
+  sup {
+    font-size: 1.45rem;
+    font-weight: 500;
+    top: -1em;
+    margin-right: 4px;
+  }
+  sub {
+    bottom: 0.02em;
+    margin-left: 4px;
+    font-weight: 700;
+    opacity: 0.6;
+    font-size: 0.5em;
+  }
 }
 
 .dashGrowth {
   max-width: 100% !important;
   margin: 10px;
   flex: 0 0 20% !important;
+
+  hr {
+    width: 500px;
+    margin: 0;
+    padding: 0;
+    color: skyblue;
+    margin-top: 30px;
+  }
+
+  h3 {
+    margin-top: 20px;
+    color: rgb(10, 46, 101);
+    opacity: 0.6;
+  }
+}
+
+.subhead {
+  color: rgb(10, 46, 101);
+  opacity: 0.3;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.1em;
 }
 
 .dashSavingsCard {
+  // height: 100px;
   max-width: 100% !important;
   flex: 0 0 25% !important;
 }
@@ -168,7 +209,7 @@ body {
   margin-bottom: 10px;
 }
 
-.planText{
+.planText {
   font-size: 3rem;
   color: #0a2e65;
   margin-right: 40px;
@@ -231,23 +272,28 @@ body {
   }
 }
 
-
-.layout{
+.layout {
   min-height: 100vh;
   background-color: #f4f7fa;
 }
 
-.content{
+.content {
   margin: 50px 30px 0px 230px;
 
-  h1{
+  h1 {
     text-align: center;
     margin: 10px;
     font-weight: bolder;
   }
 
-  h5{
+  h5 {
     text-align: center;
     margin-top: 40px;
   }
+}
+
+.balance {
+  font-weight: 500;
+  color: rgba(10, 46, 101, 0.5);
+  font-size: 0.95rem;
 }
