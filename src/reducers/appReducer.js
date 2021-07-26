@@ -1,3 +1,5 @@
+import {DEPOSIT} from "../constants/types"
+
 const initialState = {
   monetary: {
     maturity: 120030,
@@ -33,6 +35,11 @@ const initialState = {
 
 const appReducer = (state = initialState, action) => {
   switch (action.type) {
+    case DEPOSIT:
+      return{
+        ...state,
+        deposits:[...state, action.payload]
+      }
     default:
       return state;
   }
