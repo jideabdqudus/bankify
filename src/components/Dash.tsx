@@ -75,7 +75,7 @@ export const Dash: React.FC<Props> = ({
             <br />
             <Button
               className="myBtn"
-              style={{ backgroundColor: "red" }}
+              style={{ backgroundColor: "#FFDB00" }}
               onClick={showDrawerToo}
             >
               Withdraw
