@@ -6,13 +6,21 @@ export interface IMonetary {
   investment: number;
 }
 
+export interface IDepositData {
+  depositor: string;
+  amount: number;
+  type: string;
+  recipient: string;
+  desc: string;
+}
+
 export interface IReducer {
   monetary?: IMonetary;
   balance: number;
   bank: string;
   profile: [];
-  deposits: [];
-  withdrawals: [];
+  deposits?: [];
+  withdrawals?: [];
   alert?: string;
 }
 

@@ -1,7 +1,6 @@
 import { Fragment } from "react";
 import { Card, Row, Col, Button, Badge, Drawer } from "antd";
 
-
 import Plan from "../assets/emergency-plan-2.6855725.svg";
 import Savings from "../assets/saving-plans.8ae6bb5.svg";
 import Chart from "../assets/naira_funds_blue.77b50e2.svg";
@@ -9,17 +8,28 @@ import Drop from "../assets/plan.bffb472.svg";
 import Box from "../assets/giftbox-white.90fb8b4.svg";
 import Fire from "../assets/fire.svg";
 import { IApp } from "../type.d";
-import {Deposit} from "../components"
+import { Deposit } from "../components";
 interface Props {
   state: IApp;
   showDrawer: () => void;
   onClose: () => void;
-  visibility: Boolean | boolean;
-  setVisibility?: Boolean;
+  onChange: () => void;
+  onFinish: () => void;
+  depositData: object;
+  visibility: boolean;
+  setVisibility?: boolean;
 }
 
-export const Dash: React.FC<Props> = ({ state, showDrawer, onClose, visibility }) => {
-  const { balance, monetary } = state.appReducer;
+export const Dash: React.FC<Props> = ({
+  state,
+  showDrawer,
+  onClose,
+  visibility,
+  onChange,
+  onFinish,
+  depositData,
+}) => {
+  const { balance, monetary, deposits } = state.appReducer;
   return (
     <div>
       <Fragment>
@@ -52,27 +62,18 @@ export const Dash: React.FC<Props> = ({ state, showDrawer, onClose, visibility }
             </Button>
 
             <Drawer
-              title="Create a new account"
+              title="Make a Deposit"
               width={720}
               onClose={onClose}
               visible={visibility}
               bodyStyle={{ paddingBottom: 80 }}
-              footer={
-                <div
-                  style={{
-                    textAlign: "right",
-                  }}
-                >
-                  <Button onClick={onClose} style={{ marginRight: 8 }}>
-                    Cancel
-                  </Button>
-                  <Button onClick={onClose} type="primary">
-                    Submit
-                  </Button>
-                </div>
-              }
             >
-              <Deposit/>
+              <Deposit
+                deposits={deposits}
+                depositData={depositData}
+                onChange={onChange}
+                onFinish={onFinish}
+              />
             </Drawer>
           </Col>
           <Col span={16} className="dashGrowth">
